@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <File>
+    <Path>D:\15软工\大三下\团队项目开发\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\CurrentConfig\testA.dll</Path>
+    <Name>testA.dll</Name>
+    <Method>新增</Method>
+    <MD5>7FC56270E7A70FA81A5935B72EACBE29</MD5>
+  </File>
+  <File>
+    <Path>D:\15软工\大三下\团队项目开发\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\CurrentConfig\testB.dll</Path>
+    <Name>testB.dll</Name>
+    <Method>新增</Method>
+    <MD5>9D5ED678FE57BCCA610140957AFAB571</MD5>
+  </File>
+  <File>
+    <Path>D:\15软工\大三下\团队项目开发\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\CurrentConfig\testC.dll</Path>
+    <Name>testC.dll</Name>
+    <Method>新增</Method>
+    <MD5>0D61F8370CAD1D412F80B84D143E1257</MD5>
+  </File>
+</Files>

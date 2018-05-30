@@ -1,0 +1,52 @@
+﻿<Page x:Class="Auto_Upgrade.ConfigEditView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Auto_Upgrade"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ConfigEditView">
+
+    <Page.Resources>
+        <local:methodList x:Key="StatusList"/>
+    </Page.Resources>
+    
+    <Grid>
+        <Button x:Name="button" Content="新建" HorizontalAlignment="Left" Height="25" Margin="568,24,0,0" VerticalAlignment="Top" Width="73" Click="Create_Click"/>
+
+        <Label x:Name="label" Content="配置文件名称：" HorizontalAlignment="Left" Height="38" Margin="72,24,0,0" VerticalAlignment="Top" Width="Auto"/>
+
+        <TextBox x:Name="ConfigFileName" HorizontalAlignment="Left" Height="25" Margin="196,24,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="330"/>
+
+        <Button x:Name="button1" Content="返回" HorizontalAlignment="Left" Height="25" Margin="646,24,0,0" VerticalAlignment="Top" Width="80" Click="Back_Click"/>
+
+        <Button x:Name="button2" Content="添加" HorizontalAlignment="Left" Height="26" Margin="646,372,0,0" VerticalAlignment="Top" Width="75" Click="add_Click"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="305" Margin="72,62,0,0" VerticalAlignment="Top" Width="649"  ItemContainerStyle="{StaticResource ListViewItemStyle}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="删除" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="BtnDelete" Click="BtnDelete_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <Image Width="10" Height="10" Source="pack://siteoforigin:,,,/Resources/delete.png"/>
+                                </Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="文件名" Width="150" DisplayMemberBinding="{Binding Path=FileName}"/>
+                    <GridViewColumn Header="路径" Width="250" DisplayMemberBinding="{Binding Path=Path}"/>
+                    <GridViewColumn Header="更新方式" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox ItemsSource="{StaticResource StatusList}"  SelectedValue="{Binding Path=UpdateMethod}" IsEnabled="{Binding Path=Enable}">
+                                </ComboBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="MD5" Width="Auto" DisplayMemberBinding="{Binding Path=Md5}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>
