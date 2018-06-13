@@ -6,13 +6,7 @@
         xmlns:local="clr-namespace:Auto_Upgrade"
         mc:Ignorable="d"
         Title="Auto_Update v1.0" Height="520" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="144*"/>
-            <ColumnDefinition Width="113*"/>
-            <ColumnDefinition Width="536*"/>
-        </Grid.ColumnDefinitions>
-        <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="542" VerticalAlignment="Top" Width="794" Margin="0,10,-0.4,-61.6" Navigated="frame_Navigated" Grid.ColumnSpan="3" NavigationUIVisibility="Visible"/>
+      
+     <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="480" VerticalAlignment="Top" Width="792" Margin="0,10,-0.4,-61.6" Grid.ColumnSpan="3" NavigationUIVisibility="Visible"/>
 
-    </Grid>
 </Window>

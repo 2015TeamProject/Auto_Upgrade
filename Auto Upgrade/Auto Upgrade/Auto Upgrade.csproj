@@ -1,18 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31F4AB01-6561-42FB-B46E-5CA77022E27F}</ProjectGuid>
+    <ProjectGuid>{C206BA5C-F012-4C4C-AB13-67D6E8B805AC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Auto_Upgrade</RootNamespace>
     <AssemblyName>Auto Upgrade</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -23,7 +39,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,17 +72,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SaveAs.xaml.cs">
-      <DependentUpon>SaveAs.xaml</DependentUpon>
+    <Compile Include="AutoSetWidth.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="Md5Creator.cs" />
+    <Compile Include="RemoteVersionPath.xaml.cs">
+      <DependentUpon>RemoteVersionPath.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SetUrl.xaml.cs">
-      <DependentUpon>SetUrl.xaml</DependentUpon>
+    <Compile Include="SaveAsView.xaml.cs">
+      <DependentUpon>SaveAsView.xaml</DependentUpon>
     </Compile>
-    <Page Include="ConfigEditView.xaml">
+    <Compile Include="SelectCreateNewVersionView.xaml.cs">
+      <DependentUpon>SelectCreateNewVersionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMethodList.cs" />
+    <Compile Include="Url.xaml.cs">
+      <DependentUpon>Url.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigManager.cs" />
+    <Page Include="ConfigCreationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ConfigInformationView.xaml">
+    <Page Include="ConfigDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,12 +109,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConfigEditView.xaml.cs">
-      <DependentUpon>ConfigEditView.xaml</DependentUpon>
+    <Compile Include="Config.cs" />
+    <Compile Include="ConfigCreationView.xaml.cs">
+      <DependentUpon>ConfigCreationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfigInformationView.xaml.cs">
-      <DependentUpon>ConfigInformationView.xaml</DependentUpon>
+    <Compile Include="ConfigDetailsView.xaml.cs">
+      <DependentUpon>ConfigDetailsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConfigInformation.cs" />
     <Compile Include="ConfigListView.xaml.cs">
       <DependentUpon>ConfigListView.xaml</DependentUpon>
     </Compile>
@@ -96,11 +124,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SaveAs.xaml">
+    <Page Include="RemoteVersionPath.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SetUrl.xaml">
+    <Page Include="SaveAsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectCreateNewVersionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Url.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,13 +156,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -137,8 +174,23 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\Config\" />
-    <Folder Include="System\Windows\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml;
 
 namespace Auto_Upgrade
 {
@@ -22,27 +21,25 @@ namespace Auto_Upgrade
     public partial class MainWindow : Window
     {
         public ConfigListView configListView;
-        public ConfigEditView configEditView;
-        public ConfigInformationView configInformationView;
+        public ConfigDetailsView configDetailsView;
+        public ConfigCreationView configCreationView;
+
+        public static string appName = System.IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath).Replace(".EXE", ".exe");
 
         public MainWindow()
         {
             InitializeComponent();
+            Url.url = ConfigManager.ReadUrlConfig();        // 读取UrlConfig.config文件中的url
             configListView = new ConfigListView(this);
-            configEditView = new ConfigEditView(this);
-            configInformationView = new ConfigInformationView(this);
+            configDetailsView = new ConfigDetailsView(this);
+            configCreationView = new ConfigCreationView(this);
+
             frame.Content = configListView;
-        }   
+        }
 
         public void ShutDown()
         {
             App.Current.Shutdown();
         }
-
-        private void frame_Navigated(object sender, NavigationEventArgs e)
-        {
-
-        }
-
     }
 }

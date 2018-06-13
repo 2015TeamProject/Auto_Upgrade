@@ -5,33 +5,31 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Auto_Upgrade"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="480" d:DesignWidth="792"
       Title="ConfigListView">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="152*"/>
-            <RowDefinition Height="73*"/>
-        </Grid.RowDefinitions>
-
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="421" VerticalAlignment="Top" Width="800" Margin="0,29,0,-0.4" Grid.RowSpan="2" ItemContainerStyle="{StaticResource ListViewItemStyle}">
+        <Button x:Name="createButton" Content="新建" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="5.32,1.234" Margin="612,5,0,0" Click="CreateConfig_Click"/>
+        <Button x:Name="setUrlButton" Content="设置Url" HorizontalAlignment="Left" Margin="704,5,0,0" VerticalAlignment="Top" Width="75" Click="SetUrl_Click"/>
+        
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="451" VerticalAlignment="Top" Width="792" ItemContainerStyle="{StaticResource ListViewItemStyle}" Margin="0,29,0,0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="config" Width="510" DisplayMemberBinding="{Binding Path=ConfigName}" />
+                    <GridViewColumn Header="配置文件名" Width="510" DisplayMemberBinding="{Binding Path=ConfigName}" />
 
                     <GridViewColumn Header="查看" Width="80">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="ShowConfig" Content="查看" Click="ShowConfig_Click" >
+                                <Button x:Name="showConfigButton" Content="查看" Click="ShowConfig_Click" >
                                 </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="生成版本" Width="100">
+                    <GridViewColumn Header="生成版本/更新" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="Create" Content="{Binding Path=Create}" Click="Create_Click" Visibility="{Binding Path=Visible1}" >
+                                <Button x:Name="createButton" Content="{Binding Path=CreateButtonText}" Click="Create_Click" Visibility="{Binding Path=CreateButtonVisible}" >
                                 </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -40,18 +38,13 @@
                     <GridViewColumn Header="删除" Width="80">
                         <GridViewColumn.CellTemplate >
                             <DataTemplate>
-                                <Button x:Name="BtnDelete" Content="删除" Click="BtnDelete_Click" Visibility="{Binding Path=Visible}" >
+                                <Button x:Name="deleteButton" Content="删除" Click="Delete_Click" Visibility="{Binding Path=DeleteButtonVisible}" >
                                 </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-
-
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="button" Content="新建" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="5.32,1.234" Margin="612,5,0,0" Click="NewConfig"/>
-        <Button x:Name="button1" Content="设置Url" HorizontalAlignment="Left" Margin="704,5,0,0" VerticalAlignment="Top" Width="75" Click="SetUrl"/>
-
     </Grid>
 </Page>

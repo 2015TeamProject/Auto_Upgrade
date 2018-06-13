@@ -1,21 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Files>
   <File>
-    <Path>D:\15软工\大三下\团队项目开发\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\CurrentConfig\testA.dll</Path>
-    <Name>testA.dll</Name>
+    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe</Path>
+    <Name>Auto Upgrade.exe</Name>
     <Method>新增</Method>
-    <MD5>7FC56270E7A70FA81A5935B72EACBE29</MD5>
+    <MD5>4A0AF902C6109356078A31B9B8D39F42</MD5>
   </File>
   <File>
-    <Path>D:\15软工\大三下\团队项目开发\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\CurrentConfig\testB.dll</Path>
-    <Name>testB.dll</Name>
+    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe.config</Path>
+    <Name>Auto Upgrade.exe.config</Name>
     <Method>新增</Method>
-    <MD5>9D5ED678FE57BCCA610140957AFAB571</MD5>
+    <MD5>EF0181DE18EF3951806C0AD63B897BA4</MD5>
   </File>
   <File>
-    <Path>D:\15软工\大三下\团队项目开发\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\CurrentConfig\testC.dll</Path>
-    <Name>testC.dll</Name>
+    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.pdb</Path>
+    <Name>Auto Upgrade.pdb</Name>
     <Method>新增</Method>
-    <MD5>0D61F8370CAD1D412F80B84D143E1257</MD5>
+    <MD5>424771375C930BFFFF2AD4527210F8B6</MD5>
+  </File>
+  <File>
+    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe</Path>
+    <Name>Auto Upgrade.vshost.exe</Name>
+    <Method>新增</Method>
+    <MD5>5A968502B84A268CA84018F1A9F6BB59</MD5>
+  </File>
+  <File>
+    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe.config</Path>
+    <Name>Auto Upgrade.vshost.exe.config</Name>
+    <Method>新增</Method>
+    <MD5>EF0181DE18EF3951806C0AD63B897BA4</MD5>
+  </File>
+  <File>
+    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe.manifest</Path>
+    <Name>Auto Upgrade.vshost.exe.manifest</Name>
+    <Method>新增</Method>
+    <MD5>A19A2658BA69030C6AC9D11FD7D7E3C1</MD5>
+  </File>
+  <File>
+    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\update.exe</Path>
+    <Name>update.exe</Name>
+    <Method>新增</Method>
+    <MD5>4194E08D3BD82BBB7D3FC40ECF675D1F</MD5>
+  </File>
+  <File>
+    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\UrlConifg.config</Path>
+    <Name>UrlConifg.config</Name>
+    <Method>新增</Method>
+    <MD5>67D3F6FB451ADB07A3113252428A9252</MD5>
   </File>
 </Files>

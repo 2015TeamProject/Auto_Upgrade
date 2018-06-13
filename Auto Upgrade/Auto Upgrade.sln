@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto Upgrade", "Auto Upgrade\Auto Upgrade.csproj", "{31F4AB01-6561-42FB-B46E-5CA77022E27F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto Upgrade", "Auto Upgrade\Auto Upgrade.csproj", "{C206BA5C-F012-4C4C-AB13-67D6E8B805AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "update", "update\update.csproj", "{1D3922C7-C506-4A15-991A-CEF57E463553}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{31F4AB01-6561-42FB-B46E-5CA77022E27F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31F4AB01-6561-42FB-B46E-5CA77022E27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31F4AB01-6561-42FB-B46E-5CA77022E27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31F4AB01-6561-42FB-B46E-5CA77022E27F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C206BA5C-F012-4C4C-AB13-67D6E8B805AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C206BA5C-F012-4C4C-AB13-67D6E8B805AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C206BA5C-F012-4C4C-AB13-67D6E8B805AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C206BA5C-F012-4C4C-AB13-67D6E8B805AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3922C7-C506-4A15-991A-CEF57E463553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3922C7-C506-4A15-991A-CEF57E463553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3922C7-C506-4A15-991A-CEF57E463553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3922C7-C506-4A15-991A-CEF57E463553}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8B6B9D2D-4073-4D04-BDEF-2481C63C69B6}
 	EndGlobalSection
 EndGlobal
