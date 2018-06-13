@@ -1,51 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Files>
   <File>
-    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe</Path>
-    <Name>Auto Upgrade.exe</Name>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade v3.0.exe</Path>
+    <Name>Auto Upgrade v3.0.exe</Name>
     <Method>新增</Method>
-    <MD5>4A0AF902C6109356078A31B9B8D39F42</MD5>
+    <MD5>027EEE6CC0D9C9619572D5852CC37F10</MD5>
   </File>
   <File>
-    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe.config</Path>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe.config</Path>
     <Name>Auto Upgrade.exe.config</Name>
     <Method>新增</Method>
     <MD5>EF0181DE18EF3951806C0AD63B897BA4</MD5>
   </File>
   <File>
-    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.pdb</Path>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.pdb</Path>
     <Name>Auto Upgrade.pdb</Name>
     <Method>新增</Method>
-    <MD5>424771375C930BFFFF2AD4527210F8B6</MD5>
+    <MD5>884E87B727E2E6CFB102D443011A391B</MD5>
   </File>
   <File>
-    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe</Path>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe</Path>
     <Name>Auto Upgrade.vshost.exe</Name>
     <Method>新增</Method>
     <MD5>5A968502B84A268CA84018F1A9F6BB59</MD5>
   </File>
   <File>
-    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe.config</Path>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe.config</Path>
     <Name>Auto Upgrade.vshost.exe.config</Name>
     <Method>新增</Method>
     <MD5>EF0181DE18EF3951806C0AD63B897BA4</MD5>
   </File>
   <File>
-    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe.manifest</Path>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe.manifest</Path>
     <Name>Auto Upgrade.vshost.exe.manifest</Name>
     <Method>新增</Method>
     <MD5>A19A2658BA69030C6AC9D11FD7D7E3C1</MD5>
   </File>
   <File>
-    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\update.exe</Path>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\update.exe</Path>
     <Name>update.exe</Name>
     <Method>新增</Method>
-    <MD5>4194E08D3BD82BBB7D3FC40ECF675D1F</MD5>
+    <MD5>D51A0BDC2D9129476B31A705CE9D34EB</MD5>
   </File>
   <File>
-    <Path>E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\Auto Upgrade\bin\Debug\UrlConifg.config</Path>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\UrlConifg.config</Path>
     <Name>UrlConifg.config</Name>
     <Method>新增</Method>
-    <MD5>67D3F6FB451ADB07A3113252428A9252</MD5>
+    <MD5>4FFBDE3F3DC70771F29FDA465FF50DE2</MD5>
   </File>
 </Files>

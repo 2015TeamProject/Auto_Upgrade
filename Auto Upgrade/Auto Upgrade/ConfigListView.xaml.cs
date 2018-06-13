@@ -252,24 +252,24 @@ namespace Auto_Upgrade
             ConfigManager.CreateXmlFile(currentConfig, currentConfigFile, true);
             MessageBox.Show("更新成功", "提示", MessageBoxButton.OK);
 
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = currentConfigFilePath + "update.exe"; //启动的应用程序名称  
+
             if (isNeedToClose && updateSoftwarePath == "")
             {
                 MessageBox.Show("主程序即将关闭", "提示", MessageBoxButton.OK);
+                startInfo.Arguments = "\"" + "\"" + " " + "\"" + currentConfigFilePath + MainWindow.appName + "\"";
             }
             else if (isNeedToClose)
             {
-                isNeedToClose = false;
                 MessageBox.Show("程序即将重启", "提示", MessageBoxButton.OK);
-
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.FileName = currentConfigFilePath + "update.exe"; //启动的应用程序名称  
                 startInfo.Arguments = "\"" + updateSoftwarePath + "\"" + " " + "\"" + currentConfigFilePath + MainWindow.appName + "\"";
-                startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                startInfo.CreateNoWindow = true;
-                startInfo.UseShellExecute = false;      //不使用系统外壳程序启动，重定向时此处必须设为false
-                startInfo.RedirectStandardOutput = true; //重定向输出，而不是默认的显示在dos控制台上
-                Process.Start(startInfo);
             }
+            startInfo.WindowStyle = ProcessWindowStyle.Normal;
+            startInfo.CreateNoWindow = true;
+            startInfo.UseShellExecute = false;      //不使用系统外壳程序启动，重定向时此处必须设为false
+            startInfo.RedirectStandardOutput = true; //重定向输出，而不是默认的显示在dos控制台上
+            Process.Start(startInfo);
         }
 
         private void ShowConfig_Click(object sender, RoutedEventArgs e)

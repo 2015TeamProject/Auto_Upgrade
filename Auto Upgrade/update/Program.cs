@@ -18,10 +18,12 @@ namespace update
 
             FileInfo ff = new FileInfo(args[1]);
             ff.Delete();
-            WebClient client = new WebClient();
-            client.DownloadFile(args[0], System.AppDomain.CurrentDomain.BaseDirectory + System.IO.Path.GetFileName(args[0]));
-            System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.BaseDirectory + System.IO.Path.GetFileName(args[0]));
-
+            if (args[0] != "")
+            {
+                WebClient client = new WebClient();
+                client.DownloadFile(args[0], System.AppDomain.CurrentDomain.BaseDirectory + System.IO.Path.GetFileName(args[0]));
+                System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.BaseDirectory + System.IO.Path.GetFileName(args[0]));
+            }
         }
     }
 }

@@ -3,3 +3,10 @@ E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\update\bin\Debug\update.exe
 E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\update\bin\Debug\update.pdb
 E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\update\obj\Debug\update.exe
 E:\1Code\Repositories\C++\0testC\vsCode\Auto Upgrade\update\obj\Debug\update.pdb
+D:\github\Auto_Upgrade\Auto Upgrade\update\bin\Debug\update.exe.config
+D:\github\Auto_Upgrade\Auto Upgrade\update\bin\Debug\update.exe
+D:\github\Auto_Upgrade\Auto Upgrade\update\bin\Debug\update.pdb
+D:\github\Auto_Upgrade\Auto Upgrade\update\obj\Debug\update.csprojResolveAssemblyReference.cache
+D:\github\Auto_Upgrade\Auto Upgrade\update\obj\Debug\update.csproj.CoreCompileInputs.cache
+D:\github\Auto_Upgrade\Auto Upgrade\update\obj\Debug\update.exe
+D:\github\Auto_Upgrade\Auto Upgrade\update\obj\Debug\update.pdb
