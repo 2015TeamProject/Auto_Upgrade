@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Files>
   <File>
-    <Path>file://D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\RemoteConfig/Auto Upgrade.exe</Path>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\RemoteConfig\Auto Upgrade.exe</Path>
     <Name>Auto Upgrade.exe</Name>
     <Method>替换</Method>
     <MD5>E0789F9C1A17089094939883B8F77CF8</MD5>

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Files>
   <File>
-    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade v3.0.exe</Path>
-    <Name>Auto Upgrade v3.0.exe</Name>
+    <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe</Path>
+    <Name>Auto Upgrade.exe</Name>
     <Method>新增</Method>
-    <MD5>027EEE6CC0D9C9619572D5852CC37F10</MD5>
+    <MD5>326DEE701196501F8B73F7A55F8F3D72</MD5>
   </File>
   <File>
     <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe.config</Path>
@@ -16,7 +16,7 @@
     <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.pdb</Path>
     <Name>Auto Upgrade.pdb</Name>
     <Method>新增</Method>
-    <MD5>884E87B727E2E6CFB102D443011A391B</MD5>
+    <MD5>5FA727103A9180E97F082EFE4AF9D02C</MD5>
   </File>
   <File>
     <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe</Path>
@@ -46,6 +46,6 @@
     <Path>D:\github\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\UrlConifg.config</Path>
     <Name>UrlConifg.config</Name>
     <Method>新增</Method>
-    <MD5>4FFBDE3F3DC70771F29FDA465FF50DE2</MD5>
+    <MD5>4300BE7942890729F8A14F4D31E48E44</MD5>
   </File>
 </Files>

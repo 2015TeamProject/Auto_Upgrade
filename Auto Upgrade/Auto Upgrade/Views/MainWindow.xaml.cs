@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Auto_Upgrade.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,7 +40,7 @@ namespace Auto_Upgrade
 
         public void ShutDown()
         {
-            App.Current.Shutdown();
+            ShutDownController.shutDown();
         }
     }
 }

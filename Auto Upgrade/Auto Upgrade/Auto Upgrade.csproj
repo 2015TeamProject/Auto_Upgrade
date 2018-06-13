@@ -72,36 +72,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AutoSetWidth.cs" />
-    <Compile Include="FileManager.cs" />
-    <Compile Include="Md5Creator.cs" />
-    <Compile Include="RemoteVersionPath.xaml.cs">
+    <Compile Include="Controllers\AutoSetWidth.cs" />
+    <Compile Include="Controllers\FileManager.cs" />
+    <Compile Include="Controllers\Md5Creator.cs" />
+    <Compile Include="Controllers\ShutDownController.cs" />
+    <Compile Include="Views\RemoteVersionPath.xaml.cs">
       <DependentUpon>RemoteVersionPath.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SaveAsView.xaml.cs">
+    <Compile Include="Views\SaveAsView.xaml.cs">
       <DependentUpon>SaveAsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SelectCreateNewVersionView.xaml.cs">
+    <Compile Include="Views\SelectCreateNewVersionView.xaml.cs">
       <DependentUpon>SelectCreateNewVersionView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateMethodList.cs" />
-    <Compile Include="Url.xaml.cs">
+    <Compile Include="Models\UpdateMethodList.cs" />
+    <Compile Include="Views\Url.xaml.cs">
       <DependentUpon>Url.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfigManager.cs" />
-    <Page Include="ConfigCreationView.xaml">
+    <Compile Include="Controllers\ConfigManager.cs" />
+    <Page Include="Views\ConfigCreationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ConfigDetailsView.xaml">
+    <Page Include="Views\ConfigDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ConfigListView.xaml">
+    <Page Include="Views\ConfigListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -109,34 +110,34 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Config.cs" />
-    <Compile Include="ConfigCreationView.xaml.cs">
+    <Compile Include="Models\Config.cs" />
+    <Compile Include="Views\ConfigCreationView.xaml.cs">
       <DependentUpon>ConfigCreationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfigDetailsView.xaml.cs">
+    <Compile Include="Views\ConfigDetailsView.xaml.cs">
       <DependentUpon>ConfigDetailsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfigInformation.cs" />
-    <Compile Include="ConfigListView.xaml.cs">
+    <Compile Include="Models\ConfigInformation.cs" />
+    <Compile Include="Views\ConfigListView.xaml.cs">
       <DependentUpon>ConfigListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RemoteVersionPath.xaml">
+    <Page Include="Views\RemoteVersionPath.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SaveAsView.xaml">
+    <Page Include="Views\SaveAsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SelectCreateNewVersionView.xaml">
+    <Page Include="Views\SelectCreateNewVersionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Url.xaml">
+    <Page Include="Views\Url.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,6 +186,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

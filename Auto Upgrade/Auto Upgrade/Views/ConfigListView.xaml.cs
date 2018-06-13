@@ -73,7 +73,7 @@ namespace Auto_Upgrade
         public void setCurrentRemoteConfig()
         {
             setCurrentConfig();                     // 设置当前配置文件项, 顺序不能颠倒
-            setRemoteConfig();          // 获取远端配置文件项，顺序不能颠倒
+            setRemoteConfig();                      // 获取远端配置文件项，顺序不能颠倒
         }
 
         private void setCurrentConfig()
@@ -89,7 +89,6 @@ namespace Auto_Upgrade
                 configInformationList.Add(new ConfigInformation(f.Name, f.FullName, "Hidden", "False"));
             }
 
-            string currentConfigFile = currentConfigFilePath + "CurrentConfig.xml";
             ConfigManager.CreateXmlFile(configInformationList, currentConfigFile, true);   // 创建当前软件运行的配置文件
 
             if (configList.Count != 0) configList.RemoveAt(configList.Count - 1);
