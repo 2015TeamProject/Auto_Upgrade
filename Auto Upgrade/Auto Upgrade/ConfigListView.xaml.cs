@@ -73,16 +73,24 @@ namespace Auto_Upgrade
             DirectoryInfo TheFolder = new DirectoryInfo(url);
             FileInfo[] fileConfigList;
             fileConfigList = TheFolder.GetFiles("*.xml");
-            foreach (FileInfo f in fileConfigList)
+            if (fileConfigList.Length == 0)
             {
-                f.CopyTo(currentConfigFilePath + f.Name, true);
-                try
-                {
-                    configList.Insert(configList.Count - 1, new Config("远端配置文件", currentConfigFilePath + f.Name, "Hidden", "Visible", "更新"));
-                }
-                catch
-                {
 
+            }
+            else
+            {
+                foreach (FileInfo f in fileConfigList)
+                {
+                    f.CopyTo(currentConfigFilePath + f.Name, true);
+                    try
+                    {
+                        configList.Insert(configList.Count - 1, new Config("远端配置文件", currentConfigFilePath + f.Name, "Hidden", "Visible", "更新"));
+                        break;
+                    }
+                    catch
+                    {
+
+                    }
                 }
             }
             listView.Items.Refresh();
@@ -255,8 +263,6 @@ namespace Auto_Upgrade
                 Process.Start(startInfo);
             }
         }
-
-
 
         private List<ConfigInformation> AnalysisXml(String path)
         {
