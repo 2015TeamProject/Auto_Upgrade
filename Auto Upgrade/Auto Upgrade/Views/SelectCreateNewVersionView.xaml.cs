@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Auto_Upgrade.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Views
 {
     /// <summary>
     /// SelectCreateNewVersionView.xaml 的交互逻辑

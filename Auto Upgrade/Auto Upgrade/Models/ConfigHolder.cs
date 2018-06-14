@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Auto_Upgrade.Controllers
+namespace Auto_Upgrade.Models
 {
-    interface AutoSetWidth
+    class ConfigHolder
     {
-        void autoSetWidth();
     }
 }

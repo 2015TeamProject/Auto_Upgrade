@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Auto_Upgrade.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Views
 {
     /// <summary>
     /// Url.xaml 的交互逻辑
     /// </summary>
-    public partial class Url : Window
+    public partial class UrlView : Window
     {
         public static string defaultUrl = "file://" + ConfigListView.remoteFilePath + "RemoteConfig.xml";     // 初始化为默认路径
         public static string url;    
@@ -30,7 +31,7 @@ namespace Auto_Upgrade
             return url;
         }
 
-        public Url(MainWindow parent)
+        public UrlView(MainWindow parent)
         {
             InitializeComponent();
             this.parent = parent;

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Models
 {
+    // 配置文件项的 信息
     class Config
     {
         private string configName;               // 配置文件名

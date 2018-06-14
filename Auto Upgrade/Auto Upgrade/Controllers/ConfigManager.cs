@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Auto_Upgrade.Models;
+using Auto_Upgrade.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Xml;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Controllers
 {
     class ConfigManager
     {
        
-        public static bool CreateXmlFile(List<ConfigInformation> configInformationList, string path, 
+        public static bool CreateXmlFile(List<TargetInformation> configInformationList, string path, 
             bool isDirectCoverage=false)
         {
             XmlDocument xmlDoc = new XmlDocument();
@@ -24,7 +26,7 @@ namespace Auto_Upgrade
             XmlNode root = xmlDoc.CreateElement("Files");
             xmlDoc.AppendChild(root);
 
-            foreach (ConfigInformation data in configInformationList)
+            foreach (TargetInformation data in configInformationList)
             {
                 XmlNode node1 = xmlDoc.CreateNode(XmlNodeType.Element, "File", null);
                 CreateNode(xmlDoc, node1, "Path", data.Path);
@@ -60,7 +62,7 @@ namespace Auto_Upgrade
             parentNode.AppendChild(node);
         }
 
-        public static void AnalysisXml(string path, List<ConfigInformation> configList, bool isLocalConfig = true)
+        public static void AnalysisXml(string path, List<TargetInformation> configList, bool isLocalConfig = true)
         {
             XmlDocument conXml = new XmlDocument();
             conXml.Load(path);
@@ -85,8 +87,8 @@ namespace Auto_Upgrade
             foreach (XmlNode file in xml)
             {
                 XmlNodeList fileList = file.ChildNodes;
-                ConfigInformation configInformation;
-                configInformation = new ConfigInformation();
+                TargetInformation configInformation;
+                configInformation = new TargetInformation();
                 configInformation.Path = fileList.Item(0).InnerText;
                 configInformation.FileName = fileList.Item(1).InnerText;
                 configInformation.UpdateMethod = fileList.Item(2).InnerText;
@@ -101,7 +103,7 @@ namespace Auto_Upgrade
         public static void CreateUrlConfig(string path="")
         {
             byte[] data;
-            FileStream fs = new FileStream(Url.urlConfigPath, FileMode.Create);
+            FileStream fs = new FileStream(UrlView.urlConfigPath, FileMode.Create);
             if (path != "")
             {
                 //获得字节数组
@@ -110,7 +112,7 @@ namespace Auto_Upgrade
             else
             {
                 //获得字节数组
-                data = System.Text.Encoding.Default.GetBytes(Url.defaultUrl);
+                data = System.Text.Encoding.Default.GetBytes(UrlView.defaultUrl);
             }
             //开始写入
             fs.Write(data, 0, data.Length);
@@ -121,11 +123,11 @@ namespace Auto_Upgrade
 
         public static string ReadUrlConfig()
         {
-            if (!File.Exists(Url.urlConfigPath))
+            if (!File.Exists(UrlView.urlConfigPath))
             {
                 CreateUrlConfig();
             }
-            StreamReader sr = new StreamReader(Url.urlConfigPath, Encoding.Default);
+            StreamReader sr = new StreamReader(UrlView.urlConfigPath, Encoding.Default);
             string line = sr.ReadLine();
             sr.Close();
             return line;
@@ -133,11 +135,11 @@ namespace Auto_Upgrade
 
         public static void XMLConfigPathChange(string xmlPath, string path)
         {
-            List<ConfigInformation> config = new List<ConfigInformation>();
+            List<TargetInformation> config = new List<TargetInformation>();
 
             AnalysisXml(xmlPath, config);
 
-            foreach (ConfigInformation c in config)
+            foreach (TargetInformation c in config)
             {
                 c.Path = path + "/" + c.FileName;
             }

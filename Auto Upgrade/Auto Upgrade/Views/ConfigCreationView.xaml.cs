@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Auto_Upgrade.Controllers;
+using Auto_Upgrade.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Views
 {
     /// <summary>
     /// ConfigCreationView.xaml 的交互逻辑
@@ -25,7 +27,7 @@ namespace Auto_Upgrade
     {
         // 父窗口
         private MainWindow parent;
-        private List<ConfigInformation> configInformationList;
+        private List<TargetInformation> configInformationList;
         private Dictionary<string, bool> exist;
 
         public ConfigCreationView(MainWindow parent)
@@ -34,7 +36,7 @@ namespace Auto_Upgrade
 
             this.parent = parent;
 
-            configInformationList = new List<ConfigInformation>();
+            configInformationList = new List<TargetInformation>();
             listView.ItemsSource = configInformationList;
 
             exist = new Dictionary<string, bool>();
@@ -61,7 +63,7 @@ namespace Auto_Upgrade
             exist.Add(path, true);
 
             string fileName = System.IO.Path.GetFileName(path);
-            ConfigInformation c = new ConfigInformation(fileName, path, "Visible", "True");
+            TargetInformation c = new TargetInformation(fileName, path, "Visible", "True");
             configInformationList.Add(c);
             listView.Items.Refresh();
             this.autoSetWidth();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Auto_Upgrade.Controllers;
+using Auto_Upgrade.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Views
 {
     /// <summary>
     /// SaveAsView.xaml 的交互逻辑
@@ -20,9 +22,9 @@ namespace Auto_Upgrade
     public partial class SaveAsView : Window
     {
         private MainWindow parent;
-        private List<ConfigInformation> configInformationList;
+        private List<TargetInformation> configInformationList;
 
-        public SaveAsView(MainWindow parent, List<ConfigInformation> configInformationList)
+        public SaveAsView(MainWindow parent, List<TargetInformation> configInformationList)
         {
             InitializeComponent();
             this.parent = parent;

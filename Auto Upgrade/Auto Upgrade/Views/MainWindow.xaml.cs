@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Views
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -30,7 +30,7 @@ namespace Auto_Upgrade
         public MainWindow()
         {
             InitializeComponent();
-            Url.url = ConfigManager.ReadUrlConfig();        // 读取UrlConfig.config文件中的url
+            UrlView.url = ConfigManager.ReadUrlConfig();        // 读取UrlConfig.config文件中的url
             configListView = new ConfigListView(this);
             configDetailsView = new ConfigDetailsView(this);
             configCreationView = new ConfigCreationView(this);

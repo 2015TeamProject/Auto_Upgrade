@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Auto_Upgrade.Controllers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,9 +7,10 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Models
 {
-    public class ConfigInformation
+    // 配置文件内 目标文件的信息
+    public class TargetInformation
     {
         private string fileName;
         private string path;
@@ -89,13 +91,13 @@ namespace Auto_Upgrade
             }
         }
 
-        public ConfigInformation(string deleteButtonVisible = "Visible", string updateMethodEnable = "True")
+        public TargetInformation(string deleteButtonVisible = "Visible", string updateMethodEnable = "True")
         {
             this.deleteButtonVisible = deleteButtonVisible;
             this.updateMethodEnable = updateMethodEnable;
         }
 
-        public ConfigInformation(string fileName, string path, string deleteButtonVisible = "Visible", string updateMethodEnable = "True", string updateMethod="新增")
+        public TargetInformation(string fileName, string path, string deleteButtonVisible = "Visible", string updateMethodEnable = "True", string updateMethod="新增")
         {
             this.fileName = fileName;
             this.path = path;

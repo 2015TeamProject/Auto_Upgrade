@@ -72,10 +72,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Auto_Upgrade\ConfigListView.cs" />
     <Compile Include="Controllers\AutoSetWidth.cs" />
     <Compile Include="Controllers\FileManager.cs" />
     <Compile Include="Controllers\Md5Creator.cs" />
     <Compile Include="Controllers\ShutDownController.cs" />
+    <Compile Include="Models\ConfigHolder.cs" />
     <Compile Include="Views\RemoteVersionPath.xaml.cs">
       <DependentUpon>RemoteVersionPath.xaml</DependentUpon>
     </Compile>
@@ -86,8 +88,8 @@
       <DependentUpon>SelectCreateNewVersionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\UpdateMethodList.cs" />
-    <Compile Include="Views\Url.xaml.cs">
-      <DependentUpon>Url.xaml</DependentUpon>
+    <Compile Include="Views\UrlView.xaml.cs">
+      <DependentUpon>UrlView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ConfigManager.cs" />
     <Page Include="Views\ConfigCreationView.xaml">
@@ -117,7 +119,7 @@
     <Compile Include="Views\ConfigDetailsView.xaml.cs">
       <DependentUpon>ConfigDetailsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\ConfigInformation.cs" />
+    <Compile Include="Models\TargetInformation.cs" />
     <Compile Include="Views\ConfigListView.xaml.cs">
       <DependentUpon>ConfigListView.xaml</DependentUpon>
     </Compile>
@@ -137,7 +139,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Url.xaml">
+    <Page Include="Views\UrlView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

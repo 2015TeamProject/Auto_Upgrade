@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Auto_Upgrade.Controllers;
+using Auto_Upgrade.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -17,7 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Views
 {
     /// <summary>
     /// ConfigListView.xaml 的交互逻辑
@@ -82,11 +84,11 @@ namespace Auto_Upgrade
             FileInfo[] fileConfigList;
             fileConfigList = TheFolder.GetFiles();          // 获取根目录下所有文件
 
-            List<ConfigInformation> configInformationList = new List<ConfigInformation>();
+            List<TargetInformation> configInformationList = new List<TargetInformation>();
             foreach (FileInfo f in fileConfigList)
             {
                 if (f.Name.Substring(f.Name.Length - 4) == ".xml") continue;    // 跳过.xml的配置文件
-                configInformationList.Add(new ConfigInformation(f.Name, f.FullName, "Hidden", "False"));
+                configInformationList.Add(new TargetInformation(f.Name, f.FullName, "Hidden", "False"));
             }
 
             ConfigManager.CreateXmlFile(configInformationList, currentConfigFile, true);   // 创建当前软件运行的配置文件
@@ -101,12 +103,12 @@ namespace Auto_Upgrade
             WebClient client = new WebClient();
             try
             {
-                client.DownloadFile(Url.url, currentRemoteConfig);            // 下载远端配置文件到当前目录
+                client.DownloadFile(UrlView.url, currentRemoteConfig);            // 下载远端配置文件到当前目录
             }
             catch
             {
                 MessageBox.Show("远端配置文件Url资源不存在或有误", "警告", MessageBoxButton.OK, MessageBoxImage.Error);
-                ConfigManager.CreateXmlFile(new List<ConfigInformation>(), currentRemoteConfig, true);
+                ConfigManager.CreateXmlFile(new List<TargetInformation>(), currentRemoteConfig, true);
             }
 
             if (configList.Count >= 2) configList.RemoveAt(configList.Count - 2);
@@ -165,14 +167,14 @@ namespace Auto_Upgrade
             if (listView.Items.Count - 2 == listView.SelectedIndex)
             {
                 // 更新软件
-                List<ConfigInformation> remoteConfig = new List<ConfigInformation>();
-                List<ConfigInformation> currentConfig = new List<ConfigInformation>();
+                List<TargetInformation> remoteConfig = new List<TargetInformation>();
+                List<TargetInformation> currentConfig = new List<TargetInformation>();
 
                 ConfigManager.AnalysisXml(currentRemoteConfig, remoteConfig, false);
                 ConfigManager.AnalysisXml(currentConfigFile, currentConfig, false);
 
                 WebClient client = new WebClient();
-                foreach (ConfigInformation file in remoteConfig)
+                foreach (TargetInformation file in remoteConfig)
                 {
                     if (file.FileName == MainWindow.appName)
                     {
@@ -194,7 +196,7 @@ namespace Auto_Upgrade
                     {
                         if (File.Exists(currentConfigFilePath + file.FileName))
                         {
-                            foreach (ConfigInformation config in currentConfig)
+                            foreach (TargetInformation config in currentConfig)
                             {
                                 if (config.FileName == file.FileName)
                                 {
@@ -212,7 +214,7 @@ namespace Auto_Upgrade
                     }
                     else if (file.UpdateMethod == "删除")
                     {
-                        foreach (ConfigInformation cf in currentConfig)
+                        foreach (TargetInformation cf in currentConfig)
                         {
                             if (file.Md5 == cf.Md5 && file.FileName == cf.FileName)
                             {
@@ -225,7 +227,7 @@ namespace Auto_Upgrade
                     }
                 }
                 
-                ThreadHelper arg = new Auto_Upgrade.ConfigListView.ThreadHelper { c = currentConfig };
+                ThreadHelper arg = new ThreadHelper { c = currentConfig };
                 Thread t = new Thread(new ParameterizedThreadStart(updateConfig));
                 t.Start(arg);
                 if (isNeedToClose) parent.ShutDown();
@@ -241,12 +243,12 @@ namespace Auto_Upgrade
 
         class ThreadHelper
         {
-            public List<ConfigInformation> c;
+            public List<TargetInformation> c;
         }
 
         private void updateConfig(Object arg)
         {
-            List<ConfigInformation> currentConfig = (arg as ThreadHelper).c;
+            List<TargetInformation> currentConfig = (arg as ThreadHelper).c;
 
             ConfigManager.CreateXmlFile(currentConfig, currentConfigFile, true);
             MessageBox.Show("更新成功", "提示", MessageBoxButton.OK);
@@ -292,7 +294,7 @@ namespace Auto_Upgrade
 
         private void SetUrl_Click(object sender, RoutedEventArgs e)
         {
-        Url url = new Url(parent);
+        UrlView url = new UrlView(parent);
             url.ShowDialog();
         }
     }

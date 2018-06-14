@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Auto_Upgrade
+namespace Auto_Upgrade.Controllers
 {
     class Md5Creator
     {
