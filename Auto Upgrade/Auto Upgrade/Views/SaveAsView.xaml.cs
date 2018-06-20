@@ -61,7 +61,8 @@ namespace Auto_Upgrade.Views
                 return;
 
             parent.configListView.addLocalConfig(this.configFileName.Text + ".xml", fileName);
-            parent.frame.Content = parent.configListView;
+            parent.tabConrol.Items.Remove(parent.tabConrol.SelectedItem);
+            parent.returnConfigListView();
             this.Close();
         }
     }

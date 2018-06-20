@@ -40,7 +40,6 @@ namespace Auto_Upgrade.Views
             listView.ItemsSource = configInformationList;
 
             exist = new Dictionary<string, bool>();
-
         }
 
         public void ClearToReady()
@@ -53,7 +52,8 @@ namespace Auto_Upgrade.Views
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.ClearToReady();
-            parent.frame.Content = parent.configListView;
+            parent.tabConrol.Items.Remove(parent.tabConrol.SelectedItem);
+            parent.returnConfigListView();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -66,7 +66,7 @@ namespace Auto_Upgrade.Views
             TargetInformation c = new TargetInformation(fileName, path, "Visible", "True");
             configInformationList.Add(c);
             listView.Items.Refresh();
-            this.autoSetWidth();
+            autoSetWidth();
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
@@ -95,7 +95,8 @@ namespace Auto_Upgrade.Views
 
             parent.configListView.addLocalConfig(this.configFileName.Text + ".xml", fileName);
             this.ClearToReady();
-            parent.frame.Content = parent.configListView;
+            parent.tabConrol.Items.Remove(parent.tabConrol.SelectedItem);
+            parent.returnConfigListView();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

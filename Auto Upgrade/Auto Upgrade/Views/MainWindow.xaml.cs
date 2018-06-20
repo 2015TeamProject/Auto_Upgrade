@@ -35,12 +35,46 @@ namespace Auto_Upgrade.Views
             configDetailsView = new ConfigDetailsView(this);
             configCreationView = new ConfigCreationView(this);
 
-            frame.Content = configListView;
+            TabItem item = new TabItem();
+            item.Header = "配置文件列表";
+            Frame tabFrame = new Frame();
+            tabFrame.Content = configListView;
+            item.Content = tabFrame;
+
+            tabConrol.Items.Add(item);
         }
 
         public void ShutDown()
         {
             ShutDownController.shutDown();
+        }
+
+
+        public void addItem(Page page, string header)
+        {
+            TabItem item = new TabItem();
+            item.Header = header;
+            Frame frame = new Frame();
+            frame.Content = page;
+            item.Content = frame;
+            tabConrol.Items.Add(item);
+            tabConrol.SelectedIndex = tabConrol.Items.Count - 1;
+        }
+
+        public void returnConfigListView()
+        {
+            tabConrol.SelectedIndex = 0;
+        }
+
+        private void SetUrl_Click(object sender, RoutedEventArgs e)
+        {
+            UrlView url = new UrlView(this);
+            url.ShowDialog();
+        }
+
+        private void CreateConfig_Click(object sender, RoutedEventArgs e)
+        {
+            this.addItem(new ConfigCreationView(this), "untitled");
         }
     }
 }

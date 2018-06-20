@@ -9,10 +9,7 @@
       Title="ConfigListView">
 
     <Grid>
-        <Button x:Name="createButton" Content="新建" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" RenderTransformOrigin="5.32,1.234" Margin="612,5,0,0" Click="CreateConfig_Click"/>
-        <Button x:Name="setUrlButton" Content="设置Url" HorizontalAlignment="Left" Margin="704,5,0,0" VerticalAlignment="Top" Width="75" Click="SetUrl_Click"/>
-        
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="451" VerticalAlignment="Top" Width="792" ItemContainerStyle="{StaticResource ListViewItemStyle}" Margin="0,29,0,0">
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="470" VerticalAlignment="Top" Width="792" ItemContainerStyle="{StaticResource ListViewItemStyle}" Margin="0,10,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="配置文件名" Width="510" DisplayMemberBinding="{Binding Path=ConfigName}" />

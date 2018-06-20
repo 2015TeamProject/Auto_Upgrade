@@ -113,14 +113,16 @@ namespace Auto_Upgrade.Views
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.ClearToReady();
-            parent.frame.Content = parent.configListView;
+            parent.tabConrol.Items.Remove(parent.tabConrol.SelectedItem);
+            parent.returnConfigListView();
         }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             ConfigManager.CreateXmlFile(configInformationList, this.path, true);
             this.ClearToReady();
-            parent.frame.Content = parent.configListView;
+            parent.tabConrol.Items.Remove(parent.tabConrol.SelectedItem);
+            parent.returnConfigListView();
         }
 
         public void autoSetWidth()

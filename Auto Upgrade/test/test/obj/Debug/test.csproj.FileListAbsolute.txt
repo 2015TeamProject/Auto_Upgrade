@@ -1,1 +1,16 @@
 E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\bin\Debug\test.exe.config
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\bin\Debug\test.exe
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\bin\Debug\test.pdb
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\View\MainWindow.g.cs
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\View\UrlView.g.cs
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\App.g.cs
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\test_MarkupCompile.cache
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\test_MarkupCompile.lref
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\View\MainWindow.baml
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\View\UrlView.baml
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\test.g.resources
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\test.Properties.Resources.resources
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\test.csproj.GenerateResource.Cache
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\test.exe
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\obj\Debug\test.pdb

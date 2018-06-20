@@ -41,9 +41,6 @@ namespace Auto_Upgrade.Views
         // 虚拟远端的配置文件夹
         public static string remoteFilePath = currentConfigFilePath + "RemoteConfig\\";
 
-        private bool isNeedToClose;
-        private string updateFileName;
-
         // 配置文件列表
         private List<Config> configList;
 
@@ -54,8 +51,6 @@ namespace Auto_Upgrade.Views
         {
             InitializeComponent();
             this.parent = parent;
-
-            isNeedToClose = false;
 
             configList = new List<Config>();
             listView.ItemsSource = configList;      // 绑定数据源
@@ -185,22 +180,12 @@ namespace Auto_Upgrade.Views
                     configList[listView.SelectedIndex].ConfigName == "本地配置文件"
                     || configList[listView.SelectedIndex].ConfigName == "远端配置文件") ? false : true;
 
-            parent.configDetailsView.ClearToReady();
-            parent.configDetailsView.showDetails(path, canModify);
-            parent.frame.Content = parent.configDetailsView;
+
+            ConfigDetailsView configDetailsView = new ConfigDetailsView(parent);
+            configDetailsView.showDetails(path, canModify);
+            parent.addItem(configDetailsView, configList[listView.SelectedIndex].ConfigName);
         }
 
-        private void CreateConfig_Click(object sender, RoutedEventArgs e)
-        {
-            parent.configCreationView.ClearToReady();
-            parent.frame.Content = parent.configCreationView;
-        }
-
-        private void SetUrl_Click(object sender, RoutedEventArgs e)
-        {
-        UrlView url = new UrlView(parent);
-            url.ShowDialog();
-        }
     }
 
 }

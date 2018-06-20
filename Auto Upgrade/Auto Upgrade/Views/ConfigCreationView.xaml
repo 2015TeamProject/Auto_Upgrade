@@ -35,9 +35,9 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="文件名" Width="250" DisplayMemberBinding="{Binding Path=FileName}"/>
+                    <GridViewColumn Header="文件名" Width="300" DisplayMemberBinding="{Binding Path=FileName}"/>
                     
-                    <GridViewColumn Header="更新方式" Width="120">
+                    <GridViewColumn Header="更新方式" Width="Auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <ComboBox ItemsSource="{StaticResource StatusList}"  SelectedValue="{Binding Path=UpdateMethod}"
