@@ -30,7 +30,8 @@
                     <GridViewColumn Header="更新方式" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <ComboBox ItemsSource="{StaticResource StatusList}"  SelectedValue="{Binding Path=UpdateMethod}" IsEnabled="{Binding Path=UpdateMethodEnable}">
+                                <ComboBox ItemsSource="{StaticResource StatusList}"  SelectedValue="{Binding Path=UpdateMethod}" SelectionChanged="AutoSetWidth"
+                                           IsEnabled="{Binding Path=UpdateMethodEnable}">
                                 </ComboBox>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

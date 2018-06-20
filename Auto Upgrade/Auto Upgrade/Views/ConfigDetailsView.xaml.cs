@@ -135,5 +135,10 @@ namespace Auto_Upgrade.Views
                 }
             }
         }
+
+        private void AutoSetWidth(object sender, SelectionChangedEventArgs e)
+        {
+            autoSetWidth();
+        }
     }
 }

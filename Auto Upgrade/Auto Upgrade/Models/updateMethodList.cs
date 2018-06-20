@@ -14,6 +14,7 @@ namespace Auto_Upgrade.Models
             this.Add("新增");
             this.Add("替换");
             this.Add("删除");
+            this.Add("覆盖后重启");
         }
     }
 }

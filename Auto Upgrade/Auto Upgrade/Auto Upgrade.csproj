@@ -72,20 +72,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Auto_Upgrade\ConfigListView.cs" />
     <Compile Include="Controllers\AutoSetWidth.cs" />
     <Compile Include="Controllers\FileManager.cs" />
     <Compile Include="Controllers\Md5Creator.cs" />
     <Compile Include="Controllers\ShutDownController.cs" />
     <Compile Include="Models\ConfigHolder.cs" />
-    <Compile Include="Views\RemoteVersionPath.xaml.cs">
-      <DependentUpon>RemoteVersionPath.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SaveAsView.xaml.cs">
       <DependentUpon>SaveAsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SelectCreateNewVersionView.xaml.cs">
-      <DependentUpon>SelectCreateNewVersionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\UpdateMethodList.cs" />
     <Compile Include="Views\UrlView.xaml.cs">
@@ -127,15 +120,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\RemoteVersionPath.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\SaveAsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SelectCreateNewVersionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,7 +173,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Auto_Upgrade\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,7 +4,7 @@
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe</Path>
     <Name>Auto Upgrade.exe</Name>
     <Method>新增</Method>
-    <MD5>8B27B2825CB20B25B24840EF6AA57A48</MD5>
+    <MD5>9F63590AE10F3BDFFE5B368AE14D644B</MD5>
   </File>
   <File>
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe.config</Path>
@@ -16,7 +16,7 @@
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.pdb</Path>
     <Name>Auto Upgrade.pdb</Name>
     <Method>新增</Method>
-    <MD5>A3446DA4EB4FBE0BA1E1E6AD84EBF98A</MD5>
+    <MD5>C4C2C45C0BA50DB8A346719EF8714E92</MD5>
   </File>
   <File>
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe</Path>
@@ -46,6 +46,6 @@
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\UrlConifg.config</Path>
     <Name>UrlConifg.config</Name>
     <Method>新增</Method>
-    <MD5>4300BE7942890729F8A14F4D31E48E44</MD5>
+    <MD5>70412C45A3F8C0449A87AA25E34A8C8D</MD5>
   </File>
 </Files>

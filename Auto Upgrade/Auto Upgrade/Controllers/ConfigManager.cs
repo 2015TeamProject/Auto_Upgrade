@@ -133,7 +133,7 @@ namespace Auto_Upgrade.Controllers
             return line;
         }
 
-        public static void XMLConfigPathChange(string xmlPath, string path)
+        public static void XMLConfigPathChange(string xmlPath)
         {
             List<TargetInformation> config = new List<TargetInformation>();
 
@@ -141,7 +141,7 @@ namespace Auto_Upgrade.Controllers
 
             foreach (TargetInformation c in config)
             {
-                c.Path = path + "/" + c.FileName;
+                c.Path = xmlPath + "/" + c.FileName;
             }
 
             CreateXmlFile(config, xmlPath, true);

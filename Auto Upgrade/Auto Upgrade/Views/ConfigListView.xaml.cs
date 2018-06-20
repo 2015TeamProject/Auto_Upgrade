@@ -42,7 +42,7 @@ namespace Auto_Upgrade.Views
         public static string remoteFilePath = currentConfigFilePath + "RemoteConfig\\";
 
         private bool isNeedToClose;
-        private string updateSoftwarePath;
+        private string updateFileName;
 
         // 配置文件列表
         private List<Config> configList;
@@ -56,7 +56,6 @@ namespace Auto_Upgrade.Views
             this.parent = parent;
 
             isNeedToClose = false;
-            updateSoftwarePath = "";
 
             configList = new List<Config>();
             listView.ItemsSource = configList;      // 绑定数据源
@@ -174,6 +173,8 @@ namespace Auto_Upgrade.Views
                 ConfigManager.AnalysisXml(currentConfigFile, currentConfig, false);
 
                 WebClient client = new WebClient();
+                string url = System.IO.Path.GetDirectoryName(UrlView.url);
+                MessageBox.Show(url);
                 foreach (TargetInformation file in remoteConfig)
                 {
                     if (file.FileName == MainWindow.appName)
@@ -181,17 +182,13 @@ namespace Auto_Upgrade.Views
                         if (file.Md5 != Md5Creator.createMd5(currentConfigFilePath + MainWindow.appName)
                                && (file.UpdateMethod == "替换" || file.UpdateMethod == "新增"))
                         {
-                            updateSoftwarePath = file.Path;
                             isNeedToClose = true;
-                        }
-                        else if (file.Md5 == Md5Creator.createMd5(currentConfigFilePath + MainWindow.appName) && file.UpdateMethod == "删除")
-                        {
-                            isNeedToClose = true;
+                            updateFileName = file.FileName;
                         }
                         continue;
                     }
 
-                  
+
                     if (file.UpdateMethod == "新增" || file.UpdateMethod == "替换")
                     {
                         if (File.Exists(currentConfigFilePath + file.FileName))
@@ -210,7 +207,7 @@ namespace Auto_Upgrade.Views
                         {
                             currentConfig.Add(file);
                         }
-                        client.DownloadFile(file.Path, currentConfigFilePath + file.FileName);
+                        client.DownloadFile(url + "/" + file.FileName, currentConfigFilePath + file.FileName);
                     }
                     else if (file.UpdateMethod == "删除")
                     {
@@ -225,6 +222,14 @@ namespace Auto_Upgrade.Views
                             }
                         }
                     }
+                    else if (file.UpdateMethod == "覆盖后重启")
+                    {
+                        if (file.Md5 != Md5Creator.createMd5(currentConfigFilePath + MainWindow.appName))
+                        {
+                            isNeedToClose = true;
+                            updateFileName = file.FileName;
+                        }
+                    }
                 }
                 
                 ThreadHelper arg = new ThreadHelper { c = currentConfig };
@@ -234,10 +239,9 @@ namespace Auto_Upgrade.Views
             }
             else
             {
-                SelectCreateNewVersionView select = new SelectCreateNewVersionView();
-                select.ShowDialog();
-                FileManager.CopyToFloder(path, select.getPath());
-                ConfigManager.XMLConfigPathChange(select.getPath() + "/" + configName, select.getConfigPath());
+                string p = FileManager.SelectPath();
+                FileManager.CopyToFloder(path, p);
+                ConfigManager.XMLConfigPathChange(p + "/" + configName);
             }
         }
 
@@ -253,24 +257,20 @@ namespace Auto_Upgrade.Views
             ConfigManager.CreateXmlFile(currentConfig, currentConfigFile, true);
             MessageBox.Show("更新成功", "提示", MessageBoxButton.OK);
 
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = currentConfigFilePath + "update.exe"; //启动的应用程序名称  
+            if (isNeedToClose)
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = currentConfigFilePath + "update.exe"; //启动的应用程序名称  
 
-            if (isNeedToClose && updateSoftwarePath == "")
-            {
-                MessageBox.Show("主程序即将关闭", "提示", MessageBoxButton.OK);
-                startInfo.Arguments = "\"" + "\"" + " " + "\"" + currentConfigFilePath + MainWindow.appName + "\"";
-            }
-            else if (isNeedToClose)
-            {
                 MessageBox.Show("程序即将重启", "提示", MessageBoxButton.OK);
-                startInfo.Arguments = "\"" + updateSoftwarePath + "\"" + " " + "\"" + currentConfigFilePath + MainWindow.appName + "\"";
+                startInfo.Arguments = "\"" + System.IO.Path.GetDirectoryName(UrlView.url) + "\\" + updateFileName + "\"" + " " + "\"" + currentConfigFilePath + MainWindow.appName + "\"";
+
+                startInfo.WindowStyle = ProcessWindowStyle.Normal;
+                startInfo.CreateNoWindow = true;
+                startInfo.UseShellExecute = false;      //不使用系统外壳程序启动，重定向时此处必须设为false
+                startInfo.RedirectStandardOutput = true; //重定向输出，而不是默认的显示在dos控制台上
+                Process.Start(startInfo);
             }
-            startInfo.WindowStyle = ProcessWindowStyle.Normal;
-            startInfo.CreateNoWindow = true;
-            startInfo.UseShellExecute = false;      //不使用系统外壳程序启动，重定向时此处必须设为false
-            startInfo.RedirectStandardOutput = true; //重定向输出，而不是默认的显示在dos控制台上
-            Process.Start(startInfo);
         }
 
         private void ShowConfig_Click(object sender, RoutedEventArgs e)
