@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto Upgrade", "Auto Upgrad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "update", "update\update.csproj", "{1D3922C7-C506-4A15-991A-CEF57E463553}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateClass", "UpdateClass\UpdateClass.csproj", "{2A2B9C9B-B678-4C7E-8596-F470141D6C2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1D3922C7-C506-4A15-991A-CEF57E463553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D3922C7-C506-4A15-991A-CEF57E463553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D3922C7-C506-4A15-991A-CEF57E463553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A2B9C9B-B678-4C7E-8596-F470141D6C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A2B9C9B-B678-4C7E-8596-F470141D6C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A2B9C9B-B678-4C7E-8596-F470141D6C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A2B9C9B-B678-4C7E-8596-F470141D6C2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -165,111 +165,15 @@ namespace Auto_Upgrade.Views
             string configName = configList[listView.SelectedIndex].ConfigName;
             if (listView.Items.Count - 2 == listView.SelectedIndex)
             {
-                // 更新软件
-                List<TargetInformation> remoteConfig = new List<TargetInformation>();
-                List<TargetInformation> currentConfig = new List<TargetInformation>();
 
-                ConfigManager.AnalysisXml(currentRemoteConfig, remoteConfig, false);
-                ConfigManager.AnalysisXml(currentConfigFile, currentConfig, false);
-
-                WebClient client = new WebClient();
-                string url = System.IO.Path.GetDirectoryName(UrlView.url);
-                MessageBox.Show(url);
-                foreach (TargetInformation file in remoteConfig)
-                {
-                    if (file.FileName == MainWindow.appName)
-                    {
-                        if (file.Md5 != Md5Creator.createMd5(currentConfigFilePath + MainWindow.appName)
-                               && (file.UpdateMethod == "替换" || file.UpdateMethod == "新增"))
-                        {
-                            isNeedToClose = true;
-                            updateFileName = file.FileName;
-                        }
-                        continue;
-                    }
-
-
-                    if (file.UpdateMethod == "新增" || file.UpdateMethod == "替换")
-                    {
-                        if (File.Exists(currentConfigFilePath + file.FileName))
-                        {
-                            foreach (TargetInformation config in currentConfig)
-                            {
-                                if (config.FileName == file.FileName)
-                                {
-                                    config.Md5 = file.Md5;
-                                    config.UpdateMethod = file.UpdateMethod;
-                                    break;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            currentConfig.Add(file);
-                        }
-                        client.DownloadFile(url + "/" + file.FileName, currentConfigFilePath + file.FileName);
-                    }
-                    else if (file.UpdateMethod == "删除")
-                    {
-                        foreach (TargetInformation cf in currentConfig)
-                        {
-                            if (file.Md5 == cf.Md5 && file.FileName == cf.FileName)
-                            {
-                                FileInfo ff = new FileInfo(cf.Path);
-                                currentConfig.Remove(cf);
-                                ff.Delete();
-                                break;
-                            }
-                        }
-                    }
-                    else if (file.UpdateMethod == "覆盖后重启")
-                    {
-                        if (file.Md5 != Md5Creator.createMd5(currentConfigFilePath + MainWindow.appName))
-                        {
-                            isNeedToClose = true;
-                            updateFileName = file.FileName;
-                        }
-                    }
-                }
-                
-                ThreadHelper arg = new ThreadHelper { c = currentConfig };
-                Thread t = new Thread(new ParameterizedThreadStart(updateConfig));
-                t.Start(arg);
-                if (isNeedToClose) parent.ShutDown();
+                UpdateClass.Update updateObject = new UpdateClass.Update(currentConfigFilePath + MainWindow.appName, currentConfigFile, currentRemoteConfig, UrlView.url);
+                if (updateObject.update()) parent.ShutDown();
             }
             else
             {
                 string p = FileManager.SelectPath();
                 FileManager.CopyToFloder(path, p);
                 ConfigManager.XMLConfigPathChange(p + "/" + configName);
-            }
-        }
-
-        class ThreadHelper
-        {
-            public List<TargetInformation> c;
-        }
-
-        private void updateConfig(Object arg)
-        {
-            List<TargetInformation> currentConfig = (arg as ThreadHelper).c;
-
-            ConfigManager.CreateXmlFile(currentConfig, currentConfigFile, true);
-            MessageBox.Show("更新成功", "提示", MessageBoxButton.OK);
-
-            if (isNeedToClose)
-            {
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.FileName = currentConfigFilePath + "update.exe"; //启动的应用程序名称  
-
-                MessageBox.Show("程序即将重启", "提示", MessageBoxButton.OK);
-                startInfo.Arguments = "\"" + System.IO.Path.GetDirectoryName(UrlView.url) + "\\" + updateFileName + "\"" + " " + "\"" + currentConfigFilePath + MainWindow.appName + "\"";
-
-                startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                startInfo.CreateNoWindow = true;
-                startInfo.UseShellExecute = false;      //不使用系统外壳程序启动，重定向时此处必须设为false
-                startInfo.RedirectStandardOutput = true; //重定向输出，而不是默认的显示在dos控制台上
-                Process.Start(startInfo);
             }
         }
 

@@ -1,0 +1,5 @@
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\UpdateClass\bin\Debug\UpdateClass.dll
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\UpdateClass\bin\Debug\UpdateClass.pdb
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\UpdateClass\obj\Debug\UpdateClass.csprojResolveAssemblyReference.cache
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\UpdateClass\obj\Debug\UpdateClass.dll
+E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\UpdateClass\obj\Debug\UpdateClass.pdb

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Files>
   <File>
-    <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe</Path>
-    <Name>Auto Upgrade.exe</Name>
+    <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade v3.0.exe</Path>
+    <Name>Auto Upgrade v3.0.exe</Name>
     <Method>新增</Method>
-    <MD5>9F63590AE10F3BDFFE5B368AE14D644B</MD5>
+    <MD5>027EEE6CC0D9C9619572D5852CC37F10</MD5>
   </File>
   <File>
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.exe.config</Path>
@@ -16,7 +16,7 @@
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.pdb</Path>
     <Name>Auto Upgrade.pdb</Name>
     <Method>新增</Method>
-    <MD5>C4C2C45C0BA50DB8A346719EF8714E92</MD5>
+    <MD5>0E712D516D05758DF98128CF6B724329</MD5>
   </File>
   <File>
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\Auto Upgrade.vshost.exe</Path>
@@ -41,6 +41,12 @@
     <Name>update.exe</Name>
     <Method>新增</Method>
     <MD5>D51A0BDC2D9129476B31A705CE9D34EB</MD5>
+  </File>
+  <File>
+    <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\UpdateClass.dll</Path>
+    <Name>UpdateClass.dll</Name>
+    <Method>新增</Method>
+    <MD5>1C48B1310A4D53A97EA6D23D41F2CD2A</MD5>
   </File>
   <File>
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\Auto Upgrade\bin\Debug\UrlConifg.config</Path>
