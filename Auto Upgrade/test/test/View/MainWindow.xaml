@@ -1,0 +1,25 @@
+﻿<Window x:Class="test.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:test"
+        mc:Ignorable="d"
+        Title="测试程序" Height="520" Width="800">
+    <Grid>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <MenuItem Header="测试功能" Height="27" Width="72">
+                <MenuItem Header="设置URL" Click="SetUrl">
+
+                </MenuItem>
+                <MenuItem Header="更新" Click="Update">
+
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <!--<TextBox x:Name="textBox" HorizontalAlignment="Left" Height="255" Margin="10,116,0,0" TextWrapping="Wrap" Text="New Version" VerticalAlignment="Top" Width="724" FontSize="100"/>-->
+
+
+
+    </Grid>
+</Window>
