@@ -77,12 +77,11 @@ namespace UpdateClass
                 {
                     foreach (TargetInformation cf in currentConfig)
                     {
-                        if (file.Md5 == cf.Md5 && file.FileName == cf.FileName)
+                        if (file.Md5 == cf.Md5 && file.FileName == cf.FileName && file.FileName != appName)
                         {
                             FileInfo ff = new FileInfo(cf.Path);
                             currentConfig.Remove(cf);
                             ff.Delete();
-                            break;
                         }
                     }
                 }

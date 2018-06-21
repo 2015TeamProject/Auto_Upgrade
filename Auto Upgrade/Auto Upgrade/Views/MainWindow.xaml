@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Auto_Upgrade"
         mc:Ignorable="d"
-        Title="Auto_Update v3.0" Height="520" Width="800">
+        Title="Auto_Update v1.0" Height="540" Width="800">
     <Grid Margin="0,40,-0.4,0.4">
         <TabControl x:Name="tabConrol" Margin="0,-19,0,0" ItemContainerStyle="{StaticResource Tab}">
 
