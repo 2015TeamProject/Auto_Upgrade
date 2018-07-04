@@ -1,2 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Files />
+<Files>
+  <File>
+    <Path>C:\Users\Sdite\Desktop\RemoteConfig/newTestConfig.xml/test.exe</Path>
+    <Name>test.exe</Name>
+    <Method>覆盖后重启</Method>
+    <MD5>0BB17A99DF78C9F0209E2D43B0487EC2</MD5>
+  </File>
+</Files>

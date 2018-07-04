@@ -4,7 +4,7 @@
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\bin\Debug\test.exe</Path>
     <Name>test.exe</Name>
     <Method>新增</Method>
-    <MD5>44A4EA30BC0B13789A434E66A7ACC55B</MD5>
+    <MD5>0BB17A99DF78C9F0209E2D43B0487EC2</MD5>
   </File>
   <File>
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\bin\Debug\test.exe.config</Path>
@@ -16,7 +16,7 @@
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\bin\Debug\test.pdb</Path>
     <Name>test.pdb</Name>
     <Method>新增</Method>
-    <MD5>7A06103436D0EFE94C049CC136CC87E2</MD5>
+    <MD5>F89949EF79F3CBF6CDF7A0F391C2DED1</MD5>
   </File>
   <File>
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\bin\Debug\test.vshost.exe</Path>
@@ -52,6 +52,6 @@
     <Path>E:\1Code\Repositories\C#\Auto_Upgrade\Auto Upgrade\test\test\bin\Debug\UrlConifg.config</Path>
     <Name>UrlConifg.config</Name>
     <Method>新增</Method>
-    <MD5>BB09F559D39F2579FAEA7E4001A5A46C</MD5>
+    <MD5>E4A6016127DAC35AB9F038F8F338D807</MD5>
   </File>
 </Files>
